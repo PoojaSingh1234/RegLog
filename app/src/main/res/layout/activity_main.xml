@@ -61,49 +61,65 @@
             android:background="@drawable/p1"
             android:layout_marginTop="15dp"
             android:layout_gravity="center_horizontal"/>
-        <EditText android:layout_width="fill_parent"
+        <EditText
+            android:id="@+id/E1"
+            android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:hint="Name"
             android:background="#f3f3f3"
             android:paddingLeft="5dp"
             android:layout_marginTop="30dp"/>
-        <EditText android:layout_width="fill_parent"
+        <EditText
+            android:id="@+id/E2"
+            android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:hint="Email"
             android:background="#f3f3f3"
             android:paddingLeft="5dp"
             android:layout_marginTop="15dp"/>
-        <EditText android:layout_width="fill_parent"
+        <EditText
+            android:id="@+id/E3"
+            android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:hint="Mobile"
             android:background="#f3f3f3"
             android:paddingLeft="5dp"
             android:layout_marginTop="15dp"/>
-        <EditText android:layout_width="fill_parent"
+        <EditText
+            android:id="@+id/E4"
+            android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:hint="Password"
             android:background="#f3f3f3"
             android:paddingLeft="5dp"
             android:layout_marginTop="15dp"/>
-        <EditText android:layout_width="fill_parent"
+        <EditText
+            android:id="@+id/E5"
+            android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:hint="Confirm Password "
             android:background="#f3f3f3"
             android:paddingLeft="5dp"
             android:layout_marginTop="15dp"/>
-        <EditText android:layout_width="fill_parent"
+        <EditText
+            android:id="@+id/E6"
+            android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:hint="City"
             android:background="#f3f3f3"
             android:paddingLeft="5dp"
             android:layout_marginTop="15dp"/>
-        <EditText android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:hint="Aadhar no"
-        android:background="#f3f3f3"
-        android:paddingLeft="5dp"
-        android:layout_marginTop="15dp"/>
-        <Button android:layout_width="190dp"
+        <EditText
+            android:id="@+id/E7"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:hint="Aadhar no"
+            android:background="#f3f3f3"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="15dp"/>
+        <Button
+            android:id="@+id/B1"
+            android:layout_width="190dp"
             android:layout_height="38dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
@@ -111,7 +127,9 @@
             android:textColor="#fff"
             android:background="@drawable/btn"/>
 
-        <Button android:layout_width="190dp"
+        <Button
+            android:id="@+id/B2"
+            android:layout_width="190dp"
             android:layout_height="38dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
