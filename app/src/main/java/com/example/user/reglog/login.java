@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 public class login extends AppCompatActivity {
@@ -14,6 +15,9 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         reg = (Button)findViewById(R.id.reg);
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
 
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
