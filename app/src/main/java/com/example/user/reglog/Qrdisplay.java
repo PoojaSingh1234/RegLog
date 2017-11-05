@@ -2,18 +2,26 @@ package com.example.user.reglog;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class Qrdisplay extends AppCompatActivity {
 
@@ -24,6 +32,7 @@ public class Qrdisplay extends AppCompatActivity {
     EditText E7;
     */
     Button B3;
+    Button B4;
     ImageView image;
     String text2Qr;
 
@@ -47,6 +56,8 @@ public class Qrdisplay extends AppCompatActivity {
         final String imtext6 = imptext.getString("impe6");
         final String imtext7 = imptext.getString("impe7");
         B3 = (Button) findViewById(R.id.B3);
+        B4 = (Button) findViewById(R.id.B4);
+
         image = (ImageView) findViewById(R.id.image);
 
         B3.setOnClickListener(new View.OnClickListener() {
@@ -68,5 +79,52 @@ public class Qrdisplay extends AppCompatActivity {
                 }
             }
         });
+
+        B4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                BitmapDrawable drawable = (BitmapDrawable) image.getDrawable();
+                Bitmap bitmap = drawable.getBitmap();
+
+                File sdCardDirectory = Environment.getExternalStorageDirectory();
+
+                File imageSave = new File(sdCardDirectory, "test.png");
+
+                boolean success = false;
+
+                // Encode the file as a PNG image.
+                FileOutputStream outStream;
+                try {
+
+                    outStream = new FileOutputStream(imageSave);
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+        /* 100 to keep full quality of the image */
+
+                    outStream.flush();
+                    outStream.close();
+                    success = true;
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                if (success) {
+                    Toast.makeText(getApplicationContext(), "Image saved with success",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "Error during image saving", Toast.LENGTH_LONG).show();
+                }
+
+
+
+            }
+        });
+
+
+
     }
+
 }
