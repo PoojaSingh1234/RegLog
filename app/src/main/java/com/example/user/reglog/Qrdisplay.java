@@ -111,7 +111,7 @@ public class Qrdisplay extends AppCompatActivity {
                 }
 
                 if (success) {
-                    Toast.makeText(getApplicationContext(), "Image saved with success",
+                    Toast.makeText(getApplicationContext(), "Saving...",
                             Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getApplicationContext(),
